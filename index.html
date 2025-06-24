@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FakeStore Shop</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header>
+    <input id="search" type="text" placeholder="Buscar productos..." />
+    <select id="filter-category"><option value="">Todas las categorías</option></select>
+    <select id="sort"><option value="">Ordenar por...</option><option value="price-asc">Precio ⬆</option><option value="price-desc">Precio ⬇</option><option value="name-asc">Nombre A‑Z</option><option value="name-desc">Nombre Z‑A</option></select>
+    <button id="cart-btn">🛒 Carrito (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <section id="product-list" class="grid"></section>
+    <aside id="cart" class="hidden">
+      <h2>Carrito</h2>
+      <ul id="cart-items"></ul>
+      <div>Total: $<span id="cart-total">0.00</span></div>
+      <button id="close-cart">Cerrar</button>
+    </aside>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
