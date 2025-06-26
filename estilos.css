@@ -14,13 +14,15 @@ header {
   justify-content: space-between;
   padding: 10px;
   gap: 10px;
-  background: #ff0000;
+  background: linear-gradient(to right, red, blue);
   color: #fff;
 }
 
 #imagen {
   width: 60px;
   border-radius: 8px;
+  display: block;
+  margin: auto;
 }
 
 #titulo {
@@ -35,6 +37,9 @@ header {
 #cart-btn {
   padding: 8px;
   font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  width: 350px;
 }
 
 /* PRODUCT GRID */
