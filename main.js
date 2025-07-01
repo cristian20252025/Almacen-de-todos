@@ -27,14 +27,32 @@ function updateCartUI() {
     count += p.qty;
 
     const li = document.createElement('li');
-    li.innerHTML = `${p.title} x${p.qty} - $${(p.price * p.qty).toFixed(2)} 
-      <button onclick="removeFromCart(${id})">🗑️</button>`;
+    li.innerHTML = `
+      ${p.title} - $${(p.price * p.qty).toFixed(2)} 
+      <br>
+      <button onclick="changeQty(${id}, -1)">➖</button>
+      <span> ${p.qty} </span>
+      <button onclick="changeQty(${id}, 1)">➕</button>
+      <button onclick="removeFromCart(${id})">🗑️</button>
+    `;
     itemsContainer.appendChild(li);
   }
 
   $('cart-total').textContent = total.toFixed(2);
   $('cart-count').textContent = count;
 }
+
+function changeQty(id, delta) {
+  if (!cart[id]) return;
+
+  cart[id].qty += delta;
+  if (cart[id].qty <= 0) {
+    delete cart[id];
+  }
+  saveCart();
+  updateCartUI();
+}
+
 
 function addToCart(id) {
   const p = products.find(p => p.id === id);
@@ -64,7 +82,9 @@ function renderProducts(list) {
       <h3>${p.title}</h3>
       <p>$${p.price}</p>
       <p><small>${p.category}</small></p>
+      <div id= "boton">
       <button onclick="addToCart(${p.id})">🛒 Agregar</button>
+      </div>
     `;
     container.appendChild(div);
   });
