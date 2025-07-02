@@ -50,6 +50,7 @@ function Historial () {
  })
       }
 
+      
 function changeQty(id, delta) {
   if (!cart[id]) return;
 
