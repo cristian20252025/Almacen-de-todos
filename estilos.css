@@ -351,3 +351,23 @@ aside#cart h2 {
   background-size: 200px 100%;
   animation: shimmer 1.5s infinite linear;
 }
+
+#buy-now-cart {
+  background: linear-gradient(135deg, #23a6d5, #23d5ab);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+#buy-now-cart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(35, 213, 171, 0.4);
+}

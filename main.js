@@ -138,6 +138,33 @@ function setupCartToggle() {
     $('cart').classList.add('hidden');
   });
 }
+function setupBuyNow() {
+  $('buy-now-cart').addEventListener('click', () => {
+    if (Object.keys(cart).length === 0) {
+      alert("Tu carrito está vacío.");
+      return;
+    }
+
+    let resumen = "Resumen de compra:\n";
+    let total = 0;
+
+    for (let id in cart) {
+      const p = cart[id];
+      const subtotal = p.price * p.qty;
+      resumen += `- ${p.title} x${p.qty} = $${subtotal.toFixed(2)}\n`;
+      total += subtotal;
+    }
+
+    resumen += `\nTOTAL: $${total.toFixed(2)}\n\n¡Gracias por tu compra!`;
+    alert(resumen);
+
+    // Vaciar carrito después de la compra simulada
+    cart = {};
+    saveCart();
+    updateCartUI();
+    $('cart').classList.add('hidden');
+  });
+}
 
 async function init() {
   setupCartToggle();
@@ -145,6 +172,7 @@ async function init() {
   products = await fetchProducts();
   renderProducts(products);
   setupFilters();
+  setupBuyNow(); // 👈 Añadido aquí
 }
 
 window.addToCart = addToCart;
