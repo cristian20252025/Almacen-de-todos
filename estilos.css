@@ -89,6 +89,18 @@ header {
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
+#historial {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  width: 200px;
+  height: 40px;
+}
 /* MAIN CONTAINER */
 main {
   max-width: 1400px;

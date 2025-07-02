@@ -42,6 +42,14 @@ function updateCartUI() {
   $('cart-count').textContent = count;
 }
 
+function Historial () {
+  const Historial = document.getElementById('historial');
+  Historial.addEventListener('click', () => {
+    const historialContainer = document.getElementById('historial-container');
+    historialContainer.classList.toggle('hidden');
+ })
+      }
+
 function changeQty(id, delta) {
   if (!cart[id]) return;
 
